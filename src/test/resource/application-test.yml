@@ -4,4 +4,4 @@ spring:
     port: 5672
     username: guest
     password: guest
-    managemenetPort: 15672
+    managementPort: 15672

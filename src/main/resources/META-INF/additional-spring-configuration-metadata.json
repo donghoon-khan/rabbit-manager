@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "spring.rabbitmq.managementPort",
+  "type": "java.lang.String",
+  "description": "Port of RabbitMQ WebUI for 'spring.rabbitmq.managementPort'"
+}]}

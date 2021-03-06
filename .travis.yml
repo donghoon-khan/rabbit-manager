@@ -9,6 +9,7 @@ branches:
 cache:
   directories:
     - $HOME/.m2
+    - $HOME/.sonar/cache
 
 addons:
   sonarcloud:
@@ -17,4 +18,6 @@ addons:
       secure: "dmpiC/aA85INgFlg39fBpFeyv4yGHiuaI5Q46YW1ZselMTBy9vUeBFlkqlX8woTLnbLgKrfl73ID9+5Ilqayo0IOysgjcfPc7Tu0WeKXwCSbJIDF7iNlhKQUGDxkbKfR0cmGsDsZicVrFm4oZmCy++/esCF/s2eI25If7GzJnkHp3emrwC0fesDfJLTF4sxde7P/tn/xdSCkiAVhO3CKH+KC81dTlBnSIAw9etde+YwxEtuuR0xbwLouKhtk1y4KiJ0ELCucRsTxsx/A/YpkgoE7PLhi3tXLtydRqZijlvTqjF+nsZpjyxwya5CsvyxQMgLT88upDf/QFlJSkIoCAdwx7vGGhO999u090QsmW5Z6Vqe6pUgy5Kne/ubT/g25zq03VZUDItdkZVuodEkHYDMKIaCyvYACozcirjUbW3krAgawBbaBEZssUMBPLj2uJN2elNdU6PDddDO2DtQXsuG7QbUbAZmR/LvtiwXo89Rw0JYBruQsDqwFYOH7aJJXB1FMVQ8bLSVaPJgzW0GFKL05ba7502FSWhEXEB4QlEr2Gvwint9W01534rKgyrtJDcBxpAudT1jbgQxuHbZPIFGf/xYU8ntDUUU6wORo/Bj+WeC5kUxm5z0AfVW2S9WYSiPF9zP2mkyV83nnWjxPRDveZYs3AUtGjZhO4klMTpk="
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=donghoon-khan_rabbit-manager
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar \
+   -Dsonar.projectKey=donghoon-khan_rabbit-manager \
+   -Dsonar.login=dmpiC/aA85INgFlg39fBpFeyv4yGHiuaI5Q46YW1ZselMTBy9vUeBFlkqlX8woTLnbLgKrfl73ID9+5Ilqayo0IOysgjcfPc7Tu0WeKXwCSbJIDF7iNlhKQUGDxkbKfR0cmGsDsZicVrFm4oZmCy++/esCF/s2eI25If7GzJnkHp3emrwC0fesDfJLTF4sxde7P/tn/xdSCkiAVhO3CKH+KC81dTlBnSIAw9etde+YwxEtuuR0xbwLouKhtk1y4KiJ0ELCucRsTxsx/A/YpkgoE7PLhi3tXLtydRqZijlvTqjF+nsZpjyxwya5CsvyxQMgLT88upDf/QFlJSkIoCAdwx7vGGhO999u090QsmW5Z6Vqe6pUgy5Kne/ubT/g25zq03VZUDItdkZVuodEkHYDMKIaCyvYACozcirjUbW3krAgawBbaBEZssUMBPLj2uJN2elNdU6PDddDO2DtQXsuG7QbUbAZmR/LvtiwXo89Rw0JYBruQsDqwFYOH7aJJXB1FMVQ8bLSVaPJgzW0GFKL05ba7502FSWhEXEB4QlEr2Gvwint9W01534rKgyrtJDcBxpAudT1jbgQxuHbZPIFGf/xYU8ntDUUU6wORo/Bj+WeC5kUxm5z0AfVW2S9WYSiPF9zP2mkyV83nnWjxPRDveZYs3AUtGjZhO4klMTpk=

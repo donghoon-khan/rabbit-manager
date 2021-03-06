@@ -10,15 +10,8 @@ cache:
   directories:
     - $HOME/.m2
 
-addons:
-  sonarcloud:
-    organization: "donghoon-khan"
-    token:
-      secure: "MM1CCLBzkpvoMMlNkRfndxR+GQDFyHYQyvWZzV7JaYVb8NFAXSzFouAr089N6cvuEJPk4oLsgiP++sXQuabdDUID4Wsli9/Y7BCV8o3hm4MnNeaTFo8J1SrhMBoPRZven9VjkTbzqxtDN/TYHyztY3qeJbMUKhSvAghZkGEBKCn2JRTZ2Kg0HGIbxsXVYr8/abRP8bjuRAc/bYfQXR+6J9pczOJewHLAfLYLNAiq/kjSQqVVXS9euKzK+XeFculMFRyD8GqWbkfP9OKRnFCufOyfV9rvLEu8MJAuxQqu+TGbJXQg858C/8qy6dPET6GX4MrjeixOr6YIHFr+6aH6DV0QFxah3duK5GT5miYd1rtRxYxJPjD/Fq/vGIAIrPCYdOVNyHQtUcxx0ZMHndm8/+sdjgmEhdRT1OQUJoFpI4JT8C2gs8C6GPZRCzoHJ655DZPKQkKODwHIgbazK/gx2jxz+NQNQOVuIpaiBlJ2yC/AXDvwwGX/ElN9/h+l4CVofKFXclGbOwijJSa+UgWCHPnMaDRAEt0YlSaa9juMI67Hv73wQeZEXJS1B90tBUz2c+wcve4HtPIIPmvY8zR+yJKboS369hex2FRTzDOn5juILi1jB5J2RFJ3EcNZVtwlkCGH+RuKYR11FnSrf+ZL9lyLbvcomOwJf7hADn/KmaI="
-
 script:
-  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=donghoon-khan_rabbit-manager
+  - mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+
 env:
-  global:
-    secure: MM1CCLBzkpvoMMlNkRfndxR+GQDFyHYQyvWZzV7JaYVb8NFAXSzFouAr089N6cvuEJPk4oLsgiP++sXQuabdDUID4Wsli9/Y7BCV8o3hm4MnNeaTFo8J1SrhMBoPRZven9VjkTbzqxtDN/TYHyztY3qeJbMUKhSvAghZkGEBKCn2JRTZ2Kg0HGIbxsXVYr8/abRP8bjuRAc/bYfQXR+6J9pczOJewHLAfLYLNAiq/kjSQqVVXS9euKzK+XeFculMFRyD8GqWbkfP9OKRnFCufOyfV9rvLEu8MJAuxQqu+TGbJXQg858C/8qy6dPET6GX4MrjeixOr6YIHFr+6aH6DV0QFxah3duK5GT5miYd1rtRxYxJPjD/Fq/vGIAIrPCYdOVNyHQtUcxx0ZMHndm8/+sdjgmEhdRT1OQUJoFpI4JT8C2gs8C6GPZRCzoHJ655DZPKQkKODwHIgbazK/gx2jxz+NQNQOVuIpaiBlJ2yC/AXDvwwGX/ElN9/h+l4CVofKFXclGbOwijJSa+UgWCHPnMaDRAEt0YlSaa9juMI67Hv73wQeZEXJS1B90tBUz2c+wcve4HtPIIPmvY8zR+yJKboS369hex2FRTzDOn5juILi1jB5J2RFJ3EcNZVtwlkCGH+RuKYR11FnSrf+ZL9lyLbvcomOwJf7hADn/KmaI=
+  - SONAR_TOKEN=b72424f6b573f1e7b197654237901ac84727a6f6

@@ -9,7 +9,6 @@ branches:
 cache:
   directories:
     - $HOME/.m2
-    - $HOME/.sonar/cache
 
 addons:
   sonarcloud:
@@ -18,4 +17,4 @@ addons:
       secure: "TjrMc6BgAcGNFfKmR1maZ/rJrgeDyfzIKvlNxpZ6LzRQsUIrNUGR0oQd8oE1XstlqWMsk0XcyJWVys9iqhjsicbsGLZkEseZNzuGx8K8ZVAmhWvE77+bpRHnwZDkGX5OLzSsyU+0T3HPaO7RWl+iM/ozgQ52Bu6QPoy7EeG5yI61X0a4sir0lfW/43akLfBL+woThSzOyOt3Hk/ae/HVBp/0MwIs/EATfC4s5qU651U8tyT7453ouBG9rF6+ZN3i8bInaaJ/gzkjyDFW1Rt//SbMK69bfoIHBpybTCMr73fVlg7oADIts4m1Sp+RxEmc2tAzz2xwkgPViIypVAPwv1e8FZjRsXsqjRChBnO5CUwZTNUKTYRMWUprZT4O4SRfeC1OKDIthjTuqgoEY3hgHkozm+48A3L1Akvr7XTOvlfJALHiouib41s/BYAe0/mCTAHnjl8J4F1dZb3jSsEHb4jrJIAovzdh/U2QoVUJwMh+FeeTN0m2jOuqdkF2V8fhef6DnaUjE//YFcxboD2Cw8LuOjl/OVfJ8kQQq0/K7nBz93SCKeueAkR0csto1YTdGemwSUXeI6CbdVvZpumSFXoGY5Geij4qKzQxgq8qo09yawY0J055Yg+oJT7NFqH+y9d7sKe3Upr7re3/94kcGDxuaGGCmNypLOVmTOO0lhA="
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.login=${secrets.SONAR_TOKEN}
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.login=${SONAR_TOKEN}

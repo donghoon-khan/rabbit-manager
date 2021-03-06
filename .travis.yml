@@ -9,3 +9,13 @@ branches:
 cache:
   directories:
     - $HOME/.m2
+
+addons:
+  sonarcloud:
+    organization: "donghoon-khan"
+    token:
+      secure: "nE/IbR/nHn4tTmKb8nymKmGeWa6EragvL9O7I6IKk3INvmOHJnBl9gdW/X3w+oAmj8T8BNiHoxj6RElPnLkumf9ScTANeNloMfri2tV/FdZW8xLvcTp2o8Dv9gZ6xH4Dlt1uszsXKVI5fYtdfEyuqxr0Lqmo1AxWC3vyWu9m3iX2yukTn1XkWKrogyuO2uaMja2WJzp2KppxJCUiigc+uuCXJeof5aP6iHQUFVzYbc8g9aki5FVolSsbhnGiSO2Gm1gd3kEDM9dIvnsDjGzZDsXRSSqlNN+As3vq811gpm15V46RMDi0NxqZqR30nP0ARgMcNE9Gf15gnEqTvNlD7XP7tUT+/yyZlQoE6GsxHg9P0HGZpEG9gd4nRjAGDm+hOqXULj36uliN/E9HLqhfexrs1B37tizPY9ZA5b2821X2JBEH8T59UaGe68FczBtPG++3S2qoA+XRJpl5M80eii7QdBdCgUbUNLUPb1/WghQ9MissPeTi8B/eWMB1XBoD61lRf8axXEfwtx/xLt8Lspvbucu8eGCwzwI0ewg03furrXwAUUk1w9HkyHUGxlOHVHcwOMnygOaXjU8Ncg9HLv3CplxxVOsEN5PqrVmidcEmySH4oGiYuVDUrMPJEodhR7I3aAtAhv95uNXWgv4qA95yhJNrxZzfGsRWf3kPVKU="
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=donghoon-khan_rabbit-manager

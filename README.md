@@ -5,12 +5,4 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Application to helpful to using RabbitMQ.
-
-## Feature
-
-- [ ] List queues
-- [ ] List messages of queues
-- [ ] Delete message(s)
-- [ ] Move message(s)
-- [ ] Re-queue message(s)
-  
+ 
